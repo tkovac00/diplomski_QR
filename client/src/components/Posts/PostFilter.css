@@ -1,0 +1,27 @@
+.post-filter {
+    padding: 0 1rem;
+    width: 45%;
+   
+  }
+  
+  .post-filter_control {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .post-filter label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .post-filter select {
+    font: inherit;
+    padding: 0.3rem 3rem;
+    font-weight: bold;
+    border-radius: 6px;
+  }

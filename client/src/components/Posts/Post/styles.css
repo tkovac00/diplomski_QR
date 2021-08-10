@@ -1,0 +1,57 @@
+.card {
+    background-color: rgba(82, 81, 78, 0.438);
+   width: 100%;
+   border: 2px double rgb(5, 110, 5);
+   border-radius: 5px;
+   border-style: double;
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   position: relative;
+}
+.edit{
+    text-align: center;
+}
+.edit .title {
+    display: inline-block;
+    margin-left: 40px;
+    margin-bottom: 5px;   
+}
+
+.edit button{
+    float: right;
+}
+
+.post_photo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    cursor: pointer;
+}
+
+.details{
+    margin-left: 15px;
+}
+
+.details p{
+    font-size: 12px;
+    opacity: 70%;
+}
+
+.bottom {
+    display: inline-block;
+    width: 100%;
+}
+
+.bottom button { 
+   margin-left: auto;
+}
+
+.bottom p{
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 12px;
+    margin-left: 15px;
+}
