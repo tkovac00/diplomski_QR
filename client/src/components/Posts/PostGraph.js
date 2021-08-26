@@ -18,8 +18,8 @@ const PostGraph = (props) => {
     ];
 
     for (const post of props.posts) {
-        const postMonth = post.date.slice(5, 7)-1;
-        graphData[postMonth].value = graphData[postMonth].value + 1;
+        const postMonth = post.month_year.slice(5, 7)-1;
+        graphData[postMonth].value += + post.amount;
     }
     return <Graph datas={graphData} />
     

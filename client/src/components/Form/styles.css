@@ -9,10 +9,14 @@
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: -20px;
     
 }
 
+.titles{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: -20px;
+}
 input {
     width: 100%;
     padding: 12px 20px;
@@ -23,14 +27,34 @@ input {
     box-sizing: border-box;
      
 }
-button{
+.submit{
     background-color:rgb(5, 110, 5);
     border-radius: 4px;
-    border:none;
     color: white;
     padding: 15px 32px;
     margin-top: 10px;
     cursor: pointer;
+    margin-left: 5px;
+    border:none;
+}
+.cancel{
+    background-color: rgb(240, 38, 38);
+    border-radius: 4px;
+    color: white;
+    padding: 15px 32px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    border:none;
+}
+
+ .cancel:hover{
+    opacity:75%; 
+    transform: scale(1.05);
+}
+.submit:hover{
+    background-color: rgb(20, 130, 15);
+    transform: scale(1.05);
 }
 
 .file-upload__icon input[type="file"]{

@@ -1,0 +1,32 @@
+.mainCont{
+    display: block;
+    text-align: center; 
+}
+
+.form {
+    width: 30%;
+    padding: 10px; 
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+        
+}
+
+input[type="file"]::file-selector-button {
+    border-radius: 7px;
+    border-color: black;
+    height: 30px;
+  color: black;
+  cursor: pointer;
+}
+input[type="file"]::file-selector-button:hover {
+    background-color: rgb(26, 24, 24);
+    color: white;
+    border-color: white;
+}
+
+input[type="file"]{
+    color:white;
+    cursor: pointer;
+}

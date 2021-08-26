@@ -8,21 +8,30 @@ import PostGraph from './PostGraph'
 
 
 //sa use selector dobavljamo podatke koje smo dohvatili u reducers/posts.js
-const Posts = ({ setCurrentId, setIsEditing }) => {
+const Posts = ({ setCurrentId, setIsEditing, setIsPostEditing}) => {
 
     const posts = useSelector((state) => state.posts); //imamo pristup stanju (radi store-a) i vracamo state.posts jer su u reducers/index.js vraca posts
     // fetching data from redux - (gore) posts
     const [filteredYear, setFilteredYear] = useState('---');
+    const [filteredMonth, setFilteredMonth] = useState('---');
 
     const filterChangeHandler = (selectedYear) => {
         setFilteredYear(selectedYear);
     }
 
+    const filterChangeHandler2 = (selectedMonth) => {
+        setFilteredMonth(selectedMonth);
+    }
+
     const filteredPost = posts.filter(post => {
-        if (filteredYear === '---')
+        if (filteredYear === '---' && filteredMonth === '---')
             return post;
-        else
+        else if(filteredYear!=='---')
             return post.date.slice(0, 4) === filteredYear;
+        else if(filteredMonth!=='---')
+            return post.month_year.slice(5,7) === filteredMonth;
+        else
+            return post;
 
     });
 
@@ -31,7 +40,7 @@ const Posts = ({ setCurrentId, setIsEditing }) => {
         !posts.length ? <CircularProgress /> : ( //ako nema postova post.length=0 onda circular(!0=1), inace ovo u zagradama
             <div>
 
-                <PostFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
+                <PostFilter selected={filteredYear} selectedMonth={filteredMonth} onChangeFilter={filterChangeHandler} onChangeFilter2={filterChangeHandler2} />
                 <PostGraph posts={filteredPost} />
                 <div className="Main_grid">
                     {
@@ -44,6 +53,7 @@ const Posts = ({ setCurrentId, setIsEditing }) => {
 
                     }
                 </div>
+                <button type="button" className="cancel" style={{textAlign: 'center'}} onClick={()=>{setIsPostEditing(false)}}>Hide the list</button>
             </div>
 
         )
