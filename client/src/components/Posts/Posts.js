@@ -14,6 +14,7 @@ const Posts = ({ setCurrentId, setIsEditing, setIsPostEditing}) => {
     // fetching data from redux - (gore) posts
     const [filteredYear, setFilteredYear] = useState('---');
     const [filteredMonth, setFilteredMonth] = useState('---');
+  
 
     const filterChangeHandler = (selectedYear) => {
         setFilteredYear(selectedYear);
@@ -26,10 +27,13 @@ const Posts = ({ setCurrentId, setIsEditing, setIsPostEditing}) => {
     const filteredPost = posts.filter(post => {
         if (filteredYear === '---' && filteredMonth === '---')
             return post;
-        else if(filteredYear!=='---')
+        else if(filteredYear!=='---' && filteredMonth==='---')
             return post.date.slice(0, 4) === filteredYear;
-        else if(filteredMonth!=='---')
+        else if(filteredMonth!=='---' && filteredYear==='---')
             return post.month_year.slice(5,7) === filteredMonth;
+        else if(filteredMonth!=='---' && filteredYear!=='---'){
+            return post.date.slice(0, 4) === filteredYear && post.month_year.slice(5,7) === filteredMonth;
+            }
         else
             return post;
 
