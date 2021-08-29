@@ -1,9 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './styles.css';
-import { useDispatch } from 'react-redux';
-import { createPost, updatePost } from '../../actions/posts';
-import { useSelector } from 'react-redux';
-import { useHistory } from "react-router-dom";
 
 const Input = ({
     key1,
@@ -11,28 +7,44 @@ const Input = ({
     isValid,
     isFocused,
     isTouched,
+    placeholder,
+    type,
     setTouched,
     setBlured,
     setChange }) => {
+
     const errorMessage = (name) => {
         switch (name) {
             case "payer_name":
+                return "Only letters"
+            case "payer_surname":
+                return "Only letters"
+            case "amount":
                 return "Only digits"
+            case "IBAN":
+                return "Correct format (e.g.) : HR1234567891234567891"
+            case "model":
+                return "Correct format (e.g.) : HR00"   
+            case "reference_number":
+                return "Correct format (e.g.) : 2706-153-2021"
             default: return "Required"
         }
     }
     return (
+       
         <div>
             <input
-                type="text"
                 name={key1}
                 value={value}
+                type={type}
+                placeholder={placeholder}
                 onChange={setChange}
                 onBlur={setBlured}
                 onFocus={setTouched}
-            ></input>
-            {isFocused && isTouched && !isValid && <span >{errorMessage(key1)}</span>}
+            ></input><br/>
+            {isFocused && isTouched && !isValid && <span style={{fontWeight:"bold"}}>{errorMessage(key1)}</span>}
         </div>
+      
     )
 
 }

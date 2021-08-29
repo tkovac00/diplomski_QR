@@ -3,6 +3,21 @@
     text-align: center;
 }
 
+.container2 {
+    display: block;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto; 
+     background-color: rgba(44, 44, 44, 0.8);
+    border-radius: 10px;
+}
+.form_pic{
+    background-image: url("c:\Users\Tina\Desktop\Diplomski\client\src\photos\novo.jpg");
+    height: fit-content;
+}
 .form{
     width: 30%;
     padding: 10px; 
@@ -14,17 +29,20 @@
 
 .titles{
     color: white;
-    margin-top: 20px;
-    margin-bottom: -20px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    text-shadow: 2px 1px #e5a00d;
 }
 input {
-    width: 100%;
+    width: 30%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid #e5a00d;
+    /* border: 1px solid #ccc; */
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: rgba(44, 44, 44, 0.8);
      
 }
 .submit{
@@ -45,7 +63,8 @@ input {
     margin-top: 10px;
     cursor: pointer;
     margin-left: 5px;
-    border:none;
+    border:none; 
+   
 }
 
  .cancel:hover{

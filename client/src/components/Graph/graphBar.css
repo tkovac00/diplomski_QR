@@ -18,7 +18,8 @@
   }
   
   .graph_bar_fill {
-    background-color: rgb(5, 110, 5);
+    /* background-color: rgb(5, 110, 5); */
+    background-color: #e5a00d;
     width: 100%;
     transition: all 0.3s ease-out;
   }

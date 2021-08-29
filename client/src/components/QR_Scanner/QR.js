@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { createPost } from '../../actions/posts';
 import './styles.css';
 import { useSelector } from 'react-redux';
+import { useHistory} from "react-router-dom";
+import { CircularProgress } from '@material-ui/core';
+
 
 const QR_Scanner = ({ setIsQrEditing }) => {
 
@@ -15,6 +18,7 @@ const QR_Scanner = ({ setIsQrEditing }) => {
     const dispatch = useDispatch();
     const post = useSelector((state) => state.posts.find((p) => p.reference_number === postData.reference_number && p.month_year === postData.month_year));
     console.log(post);
+    const history = useHistory();
     const handleErrorWebCam = (err) => {
         console.log(err);
     }
@@ -52,20 +56,21 @@ const QR_Scanner = ({ setIsQrEditing }) => {
 
 
     return (
-
-        <div className="container">
+        <div className="container1">
             <h1>Scan a QR-code</h1><br />
+            <div className="frame">
             <QrReader className="scanner"
                 delay={300}
-                style={{ width: '30%' }}
+                
                 onError={handleErrorWebCam}
                 onScan={handleScanWebCam}
             />
+            
+            {post ? <div className="message"><h3>Bill is payed</h3></div> : scanResult ? <div className="message"><h3>Bill is scanned</h3></div> : null}<br />
 
-            {post ? <h3>Bill is payed</h3> : scanResult ? <h3>Bill is scanned</h3> : null}<br />
-
-            <button type="button" className="cancel" onClick={() => setIsQrEditing(false)}>Cancel</button>
+            <button type="button" className="cancel" onClick={() => {history.push("/");}}>Cancel</button>
             {(scanResult && !post) && <button type="submit" className="submit" onClick={handleSubmit}>Submit</button>}
+        </div>
         </div>
     )
 }

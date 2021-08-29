@@ -1,18 +1,21 @@
-.card {
-    background-color: rgba(82, 81, 78, 0.438);
+.card1 {
+    /* background-color: rgba(82, 81, 78, 0.438); */
    width: 100%;
-   border: 2px double rgb(5, 110, 5);
+   /* border: 2px double rgb(5, 110, 5); */
    border-radius: 5px;
    border-style: double;
    display: flex;
    flex-direction: column;
    height: 100%;
    position: relative;
+   background: rgba(44, 44, 44, 0.8);
+   z-index: 0;
+   border: 2px solid rgba(40, 42, 45, 0.9);
 }
 .edit{
     text-align: center;
 }
-.edit .title {
+.edit .title1 {
     display: inline-block;
     margin-left: 40px;
     margin-bottom: 5px;   

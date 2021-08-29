@@ -12,17 +12,16 @@
     font-size: 17px;
     line-height: 1.7;
     position: relative;
-    
-    /* background-image: url('c:\Users\Tina\Desktop\Diplomski\client\src\photos\background.jpg'); */
-     background-image: url('c:\Users\Tina\Desktop\Diplomski\client\src\photos\pozadina2.jpg');
-     background-size: 1700px 850px; 
+    background-color: #000000be;
+     /* background-size: 1700px 850px;  */
+     height: fit-content;
    
   }
  
   .body {
-    display: block;
-   padding: 265px 0; 
+    display: block; 
   } 
+  
   
   * {
     margin: 0;
@@ -31,27 +30,64 @@
   }
 
   .main-button {
-    /* background-color: rgb(54, 48, 48); */
-    background-color: rgb(253, 249, 249);
-    color: rgb(29, 26, 26);
+    background-color: rgba(44, 44, 44, 0.8);
+    color: #e5a00d;
     font-weight: bold;
     display: grid;
-    margin-left: auto;
-    margin-right: auto;
-    width: 400px;
+    width: 75%;
     font-size: 18px;
-    border-radius: 7px;
-    border-color: rgb(253, 249, 249);
+    border-radius: 10px;
+    border: 2px solid #e5a00d;
     padding: 15px 32px;
-    margin-top:7px;
+    margin-top:50px;
     cursor: pointer;
-   
   }
 
-  .main-button:hover{
-   transform: scale(1.05);
-   border-color:rgb(48, 46, 46);
+   .main-button:hover{
+   /* transform: scale(1.05); */
+   border-color:rgb(41, 138, 21);
+  } 
+  
+  .container {
+    margin-top:250px;
   }
   
+.card {
+  align-content: center;
+  width: 20%;
+  display: inline-block;
+  height: fit-content;
+  padding: 20px;
+  padding-top:30px;
+  padding-bottom: 60px;
+  margin:10px;
+  background: rgba(44, 44, 44, 0.8);
+  z-index: 0;
+  border: 2px solid rgba(40, 42, 45, 0.9);
+  text-align: left;
 
+}
+.card span{
+  color: rgb(194, 194, 194);
+}
 
+.card div {
+  display: table;
+  overflow: hidden;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.card div span {
+  margin-right:10px;
+  vertical-align: middle;
+}
+.title{
+  padding-top:100px;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}

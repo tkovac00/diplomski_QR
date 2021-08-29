@@ -6,13 +6,14 @@ import './styles.css';
 import { useDispatch } from 'react-redux';
 import { deletePost } from '../../../actions/posts';
 import QRCode from 'qrcode';
+import { useHistory} from "react-router-dom";
 
 
-const Post = ({ post, setCurrentId,setIsEditing }) => {
+const Post = ({ post, setCurrentId,setIsEditing, setIsForm }) => {
 
     const dispatch = useDispatch();
     const [image, setImage] = useState('');
-
+    const history = useHistory();
     let stringdata = JSON.stringify(post);
 
 
@@ -25,11 +26,11 @@ const Post = ({ post, setCurrentId,setIsEditing }) => {
     }, [post]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
-        <div className="card">
+        <div className="card1">
 
             <div className="edit">
-                <h4 className="title">{post.title}</h4>
-                <Button style={{ color: 'white' }} size="small" onClick={() => { setIsEditing(true); setCurrentId(post._id) }}><MoreHorizIcon fontSize="medium" /></Button>
+                <h4 className="title1">{post.title}</h4>
+                <Button style={{ color: 'white' }} size="small" onClick={() => { history.push("/form"); setIsEditing(true); setCurrentId(post._id); setIsForm(false); }}><MoreHorizIcon fontSize="medium" /></Button>
             </div>
 
             <img className="post_photo" loading="lazy" src={image} alt="" />

@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getPosts } from './actions/posts';
 import { getQRs } from './actions/QRs';
+import { Link } from 'react-router-dom'
 //import { Container, AppBar, Typography, Grow, Grid} from '@material-ui/core';
 import Header from './components/Header/Header'
 import Posts from './components/Posts/Posts';
-import Form from './components/Form/Form'
+import Form from './components/Form/Form';
+import Home from './components/Home'
 import QR from './components/QR_Scanner/QR';
 import Saved_QRs from './components/Saved_QRs/Saved_QRs';
-
+import {BrowserRouter as Router, Switch, Route, useHistory} from "react-router-dom";
 import './styles.css'
 
 const App = () => {
@@ -18,31 +20,30 @@ const App = () => {
     const [isQrEditing, setIsQrEditing] = useState();
     const [isSavedQrEditing, setIsSavedQrEditing] = useState();
 
-    const dispatch = useDispatch(); //hook
-
-    useEffect(() => { //pozovemo f-ju,prvi arg, je callback funkcija,a drugi niz  --- kao mount i update
-        dispatch(getPosts());
-        dispatch(getQRs());
-    }, [currentId, dispatch]);
 
     return (
         <div className="body">
+           
             <Header />
-
-
-            {!isQrEditing && <button className="main-button" onClick={() => { setIsQrEditing(true) }}>Scan QR</button>}
-            {isQrEditing && <QR setIsQrEditing={setIsQrEditing} />}
-
-
-            {!isEditing && <button className="main-button" onClick={() => { setIsEditing(true) }}>Add New Expense</button>}
-            {isEditing && <Form currentId={currentId} setCurrentId={setCurrentId} setIsEditing={setIsEditing} />}
-
-            {!IsPostEditing && <button className="main-button" onClick={() => { setIsPostEditing(true) }}>List of bills</button>}
-            {IsPostEditing && <Posts currentId={currentId} setCurrentId={setCurrentId} setIsPostEditing={setIsPostEditing} setIsEditing={setIsEditing} />}
-
-          {!isSavedQrEditing && <button className="main-button" onClick={() => { setIsSavedQrEditing(true) }} >Saved QRs</button>} 
-           {isSavedQrEditing && <Saved_QRs currentId={currentId} setCurrentId={setCurrentId} setIsSavedQrEditing={setIsSavedQrEditing} />}
-
+            <Router basename="/">
+                <Switch>
+                    <Route exact path="/">
+                    <Home currentId = {currentId} setCurrentId = {setCurrentId} isEditing={isEditing} setIsEditing={setIsEditing} IsPostEditing={IsPostEditing} setIsPostEditing={setIsPostEditing} isQrEditing={isQrEditing} setIsQrEditing={setIsQrEditing} isSavedQrEditing={isSavedQrEditing} setIsSavedQrEditing={setIsSavedQrEditing}/>
+                        </Route>
+                    <Route exact path="/add-bill">
+                            <QR /> 
+                        </Route>
+                    <Route exact path="/form">
+                    {isEditing && <Form currentId={currentId} setCurrentId={setCurrentId} setIsEditing={setIsEditing} />}
+                        </Route>
+                    <Route exact path="/posts">
+                       {IsPostEditing && <Posts currentId={currentId} setCurrentId={setCurrentId} setIsPostEditing={setIsPostEditing} setIsEditing={setIsEditing} />}
+                        </Route>
+                    <Route exact path="/qrs">
+                           <Saved_QRs currentId={currentId} setCurrentId={setCurrentId} />
+                        </Route>
+                </Switch>
+           </Router>
         </div>
     );
 }

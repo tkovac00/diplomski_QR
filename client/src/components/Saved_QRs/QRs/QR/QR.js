@@ -10,15 +10,17 @@ const QR = ({ QR, setCurrentId }) => {
 
     const dispatch = useDispatch();
 
+    console.log(QR.image.slice(5,15));
+
     return (
-        <div className="card">
+        <div className="card1">
 
             <div className="edit">
-                <h4 className="title">{QR.store}</h4>
+                <h4 className="title1">{QR.store}</h4>
                 <Button style={{ color: 'white' }} size="small" onClick={() => { setCurrentId(QR._id); }}><MoreHorizIcon fontSize="medium" /></Button>
             </div>  
 
-            <img className="post_photo" loading="lazy" src={QR.image} alt="" />
+            <img className="post_photo" loading="lazy" src={QR.image} alt={QR.image.slice(5,15)} />
 
             <div className="details">
                 <h5>Articl: {QR.articl}</h5>
