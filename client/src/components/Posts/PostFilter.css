@@ -1,23 +1,21 @@
 .post-filter {
     padding: 0 1rem;
-    width: 45%;
+    /* width: 100%; */
     display: block;
+    position: relative;
+    /* margin-inline-start: auto;  */
+    padding-bottom: 20px;
+   
+   
   }
   
   .post-filter_control {
-    /* display: inline-block; */
-    display:flex;
-    width:50%;
-    align-items: center;
+    display: inline-block;
+    width:40%;
     justify-content: space-between;
-    margin: 1rem 0;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .post-filter label {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+    position: absolute;
+    right: 0; 
+    padding-top: 6px;
   }
   
   .post-filter select {
@@ -27,4 +25,144 @@
     font-weight: bold;
     border-radius: 6px;
     width: 220px;
+    color: #e5a00d;
+    background: rgba(44, 44, 44, 0.8);
   }
+
+  @media only screen and (max-width: 1607px) {
+   .post-filter_control{
+     width:48%;
+   }
+  }
+  @media only screen and (max-width: 1378px) {
+    .post-filter_control{
+      width:53%;
+    }
+   }
+
+   @media only screen and (max-width: 1217px) {
+    .post-filter_control{
+      width:63%;
+    }
+   }
+
+   @media only screen and (max-width: 1026px) {
+    .post-filter_control{
+      width:70%;
+    }
+   }
+
+   @media only screen and (max-width: 670px) {
+    .post-filter_control{
+      /* margin-left: 220px; */
+      right: 0px;
+      left: 365px;
+    }
+
+    .post-filter select{
+      margin-top: 2px;
+    }
+   }
+
+   @media only screen and (max-width: 621px) {
+    .post-filter_control{
+      /* margin-left: 220px; */
+      right: 0px;
+      left: 350px;
+    }
+   }
+
+   @media only screen and (max-width: 607px) {
+    .post-filter_control{
+      /* margin-left: 220px; */
+      right: 0px;
+      left: 330px;
+    }
+   }
+
+   @media only screen and (max-width: 581px) {
+    .post-filter_control{
+      /* margin-left: 220px; */
+      right: 0px;
+      left: 300px;
+    }
+   }
+
+   @media only screen and (max-width: 670px) {
+    .post-filter_control{
+      /* margin-left: 220px; */
+      display: flex;
+      left:0;
+      margin: 0 auto;
+    }
+
+    .post-filter h3{
+      margin-inline-start: 37%;
+    }
+
+    .head h1{
+      font-size: 30px;
+    }
+   }
+
+   @media only screen and (max-width: 543px) {
+    .post-filter_control{
+      display: flex;
+      left:0;
+      margin-left: 65px;
+    }
+    .head h1{
+      font-size: 28px;
+    }
+   }
+
+   @media only screen and (max-width: 509px) {
+    .post-filter_control{
+      display: flex;
+      left:0;
+      margin-left: 40px;
+    }
+   }
+
+   @media only screen and (max-width: 487px) {
+    .post-filter_control{
+      left:0;
+      margin-left: 35px;
+    }
+
+    .post-filter_control select{
+      margin-top: 3px;
+    }
+
+    .post-filter h3{
+      margin-inline-start: 30%;
+    }
+   }
+
+   @media only screen and (max-width: 460px) {
+    .post-filter_control{
+      left:0;
+      margin-left: 25px;
+    }
+   }
+
+   @media only screen and (max-width: 437px) {
+    .post-filter_control{
+      left:0;
+      margin-left: 10px;
+    }
+   }
+
+   @media only screen and (max-width: 419px) {
+    .post-filter_control{
+      display: grid;  
+      left:0;
+      margin-left: 90px;
+    }
+   }
+
+   @media only screen and (max-width: 390px) {
+    .post-filter_control{
+      margin-left: 70px;
+    }
+   }

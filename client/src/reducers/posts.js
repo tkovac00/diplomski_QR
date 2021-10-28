@@ -7,10 +7,10 @@ const fname = (state = [], action) => { //state = posts
             return state.filter((post) => post._id !== action.payload); // ??? zasto id ne usporedemojemo
         case UPDATE:
             return state.map((post) => post._id === action.payload._id ? action.payload : post); // output od bilo kojeg map methode, array.map -> izlaz je array, action.payload je updateani post
-        case FETCH_ALL:
-            return action.payload;
         case CREATE:
             return [...state, action.payload]; //...sprad all states and add a new one action.payload
+            case FETCH_ALL:
+            return action.payload;
         default:
             return state;
     }

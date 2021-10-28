@@ -1,14 +1,17 @@
 import React from 'react';
 import './PostFilter.css';
+import CurrencyFormat from 'react-currency-format';
 
-const PostFilter = ({ selected, onChangeFilter, selectedMonth, onChangeFilter2 }) => {
+const PostFilter = ({ totalAmount, datas, selected, onChangeFilter, selectedMonth, onChangeFilter2 }) => {
+
 
     return (
         <div className='post-filter'>
+            <h3 style= {{ display: "inline-block", paddingLeft:"10px", paddingTop: "10px"}}>Total: <CurrencyFormat value={totalAmount} displayType={'text'} thousandSeparator={true}/> kn</h3>
+           
             <div className='post-filter_control'>
-                <label>Filter by year</label>
-                <select value={selected} onChange={(event) => { onChangeFilter(event.target.value) }}>
-                    <option value='---'>---</option>
+                <select value={selected} onChange={(event) => { onChangeFilter(event.target.value); }}>
+                    <option value='Year'>Year</option>
                     <option value='2021'>2021</option>
                     <option value='2020'>2020</option>
                     <option value='2019'>2019</option>
@@ -18,12 +21,9 @@ const PostFilter = ({ selected, onChangeFilter, selectedMonth, onChangeFilter2 }
                     <option value='2015'>2015</option>
                 </select>
 
-            </div>
-
-            <div className='post-filter_control'>
-                <label>Filter by month</label>
-                <select value={selectedMonth} onChange={(event) => { onChangeFilter2(event.target.value) }}>
-                    <option value='---'>---</option>
+           
+                <select value={selectedMonth} onChange={(event) => { onChangeFilter2(event.target.value); }}>
+                    <option value='Month'>Month</option>
                     <option value='01'>January</option>
                     <option value='02'>February</option>
                     <option value='03'>March</option>

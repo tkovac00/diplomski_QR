@@ -1,7 +1,6 @@
 
   html {
     box-sizing: border-box;
-    margin: 10px;
     font-family: "Spectral", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
       "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
       sans-serif;
@@ -12,21 +11,22 @@
     font-size: 17px;
     line-height: 1.7;
     position: relative;
+    /* background-color: #15313f; */
     background-color: #000000be;
-     /* background-size: 1700px 850px;  */
+    /* background-image: url("c:\Users\Tina\Desktop\Diplomski\client\src\photos\nemaspojma.jpg"); */
+    background-size: cover;
+     /* und-size: 1700px 850px;  */
      height: fit-content;
-   
+     position: relative;
   }
- 
+
   .body {
-    display: block; 
+    display: block;
   } 
-  
   
   * {
     margin: 0;
     padding: 0;
-    
   }
 
   .main-button {
@@ -43,13 +43,46 @@
     cursor: pointer;
   }
 
+  .main-button-logIn{
+    background-color: rgba(44, 44, 44, 0.8);
+    color: #e5a00d;
+    font-weight: bold;
+    display: grid;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #e5a00d;
+    padding: 15px 32px;
+    margin-top:50px;
+    cursor: pointer;
+  }
+
+.main-button-signUp{
+  background-color: #e5a00d;
+  color: rgba(44, 44, 44, 0.8);
+  font-weight: bold;
+  display: grid;
+  width: 150px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid rgba(40, 42, 45, 0.9);
+  padding: 15px 32px;
+  margin-top:50px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+.main-button-signUp:hover{
+  background-color: rgba(44, 44, 44, 0.8);
+  color: #e5a00d;
+  border: 2px solid rgb(41, 138, 21);
+}
    .main-button:hover{
    /* transform: scale(1.05); */
    border-color:rgb(41, 138, 21);
   } 
   
   .container {
-    margin-top:250px;
+    margin-top:10px;
   }
   
 .card {
@@ -59,13 +92,12 @@
   height: fit-content;
   padding: 20px;
   padding-top:30px;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
   margin:10px;
   background: rgba(44, 44, 44, 0.8);
   z-index: 0;
   border: 2px solid rgba(40, 42, 45, 0.9);
   text-align: left;
-
 }
 .card span{
   color: rgb(194, 194, 194);
@@ -84,10 +116,151 @@
   vertical-align: middle;
 }
 .title{
-  padding-top:100px;
+  position: relative;
+  padding-top:50px;
   color: white;
+  font-weight: 600;
   font-size: 50px;
   text-align: center;
   width: 100%;
   margin: 0 auto;
+}
+
+.body2{
+  position: relative;
+  padding-bottom: 70px;
+  margin-bottom: 30px;
+}
+.body2::before{
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width:99%;
+  height: 100%;
+  background: url("c:\Users\Tina\Desktop\Diplomski\client\src\photos\novo.jpg") no-repeat;
+  opacity: 0.2;
+  background-size: cover;
+  border: 5px solid white;
+}
+
+@media only screen and (max-width: 1280px) {
+  .card {
+      width:35%;
+      height: 230px;
+  }
+}
+
+@media only screen and (max-width: 873px) { 
+  .card {
+      width:38%;
+  }
+}
+
+
+@media only screen and (max-width: 831px) {
+  .card {
+      width:40%;
+  }
+  .main-button-signUp{
+      width: 280px;
+      margin: 40px auto;
+  }
+  .main-button-logIn{
+    width: 280px;
+    margin: 0px auto;
+  }
+
+}
+@media only screen and (max-width: 757px) { 
+  .card {
+      width:41%;
+  }
+}
+@media only screen and (max-width: 739px) { 
+  .card {
+      width:70%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .card {
+      width:70%;
+  }
+  .title{
+    font-size: 40px;
+  }
+  .main-button-signUp{
+    width: 100%;
+    margin: 40px auto;
+    text-align: center;
+}
+.main-button-logIn{
+  width: 100%;
+  margin: 0px auto;
+}
+}
+
+@media only screen and (max-width: 597px) {
+
+  .body2 p{
+    font-size: 15px;
+  }
+
+  .main-button-signUp{
+    font-size: 12px;
+    padding: 9px 20px;
+    margin-bottom: 10px;
+    margin-top:25px;
+  }
+  .main-button-logIn{
+    font-size: 12px;
+    padding: 9px 20px;
+  }
+}
+
+@media only screen and (max-width: 538px) {
+  .title {
+    font-size: 30px;
+  }
+    .body2 p{
+      font-size: 13px;
+    }
+
+    
+  }
+
+@media only screen and (max-width: 501px) {
+  .title {
+    font-size: 30px;
+  }
+
+  .body2 p{
+    font-size: 10px;
+  }
+  
+}
+
+
+@media only screen and (max-width: 400px) {
+  .card .main-button{
+    margin-top: 40px;
+    font-size: small;
+    width:90%
+  }
+
+  .card div{
+    font-size: 20px;
+  }
+
+}
+
+
+@media only screen and (max-width: 380px) {
+  .title {
+    font-size: 20px;
+  }
+ 
 }

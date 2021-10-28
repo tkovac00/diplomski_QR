@@ -10,7 +10,6 @@ const graphBar = ({value,maxValue,label}) => {
 
 return(
     <div className='graph_bar'>
-
         <div className='graph_bar_inner'>
             <div className='graph_bar_fill' style={{height: barFillHeight}}></div> 
         </div>

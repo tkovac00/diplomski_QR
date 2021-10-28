@@ -1,8 +1,13 @@
 .mainCont{
     display: block;
     text-align: center; 
+    position: relative;
 }
-
+.Main_grid2{
+    width: 75%;
+    margin: 0 auto;
+   
+}
 .form {
     width: 30%;
     padding: 10px; 
@@ -11,6 +16,24 @@
     margin-right: auto;
     margin-top: 20px;
         
+}
+.add_qr_button{
+    background-color: rgba(44, 44, 44, 0.8); 
+    font-weight: bold;
+    font-size: 18px;
+    width: 30%;
+    border-radius: 5px;
+    border: 2px solid #e5a00d;
+    padding: 12px 50px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    color:  #e5a00d;
+}
+
+.add_qr_button:hover{
+    background-color: #e5a00d;
+    color: rgba(36, 36, 36, 0.911);
 }
 
 input[type="file"]::file-selector-button {
@@ -27,6 +50,199 @@ input[type="file"]::file-selector-button:hover {
 }
 
 input[type="file"]{
-    color:white;
+    color:rgba(255, 255, 255, 0.507);
     cursor: pointer;
 }
+
+input[type="date"] {
+    color:rgba(255, 255, 255, 0.507);
+    cursor: pointer;
+}
+
+.search{
+    width: 200px;
+    margin-inline-start:  70px;
+    position: relative;
+}
+
+.search::placeholder{
+    font-weight: bold;
+}
+
+.search:focus{
+    background-color: #e5a00d; 
+    color: rgba(36, 36, 36, 0.911);
+    font-weight: bold;
+}
+
+.search:focus::placeholder{
+    color: black; 
+    font-weight: thin;  
+}
+
+@media only screen and (max-width: 1222px) {
+
+    .mainCont input{
+        width:50%;
+    }
+   
+   }
+   @media only screen and (max-width: 1005px) {
+    
+    .add_qr_button{
+        width: 40%;
+       }
+       
+       }
+
+@media only screen and (max-width: 877px) {
+    
+        .mainCont input{
+            width:60%;
+        }
+       
+       }
+       
+@media only screen and (max-width: 777px) {
+    
+        .mainCont input{
+            width:70%;
+        }
+        .add_qr_button{
+            width: 50%;
+           }
+        .search{
+            width:200px;
+            margin-inline-start: 37%;
+        }
+       
+       }
+
+ @media only screen and (max-width: 672px) {
+        
+            .add_qr_button{
+                width: 65%;
+               }
+               .search{
+                width:250px;
+                margin-inline-start: 31%;
+            }
+           
+           }
+    
+ @media only screen and (max-width: 594px) {
+            
+         .add_qr_button{
+              width: 70%;
+            }
+              .search{
+               width:250px;
+               margin-inline-start: 30%;
+           }
+               
+     }
+
+@media only screen and (max-width: 560px) {
+                
+         .add_qr_button{
+                width: 90%;
+               }
+               .search{
+                width:250px;
+                margin-inline-start: 28%;
+              }
+        .qr_adder .titles{
+                font-size: 20px;
+                   }
+
+                .mainCont h1{
+                font-size: 30px;
+                }
+
+                .mainCont input{
+                width:80%;
+                }
+                .Main_grid2 .hide_button{
+                    width: 60%;
+                }
+     }
+               
+@media only screen and (max-width: 546px) {
+         .listQRs .card1{
+               left:10%;
+                    }
+    }
+
+
+@media only screen and (max-width: 523px) {
+           .listQRs .card1{
+                left:7%;
+                    }
+     }
+@media only screen and (max-width: 467px) {
+            .listQRs .card1{
+                left:3%;
+                    }
+
+            .search{
+               width:230px;
+                margin-inline-start: 25%;
+                    }
+
+            .Main_grid2 .hide_button{
+                padding: 12px 30px;
+                     }
+         }
+
+@media only screen and (max-width: 438px) {
+                    
+             .add_qr_button{
+               width: 95%;
+                    }
+              .search{
+                 width:220px;
+                 margin-inline-start: 25%;
+                 }
+              .mainCont input{
+                width:90%;
+                        }
+
+               .qr_adder .titles{
+                 font-size: 20px;
+                        }
+     
+                .mainCont h1{
+                  font-size:25px;
+                     }
+                     
+                .listQRs .card1{
+                  left:0%;
+                    }
+          }
+
+ @media only screen and (max-width: 400px) {
+                  .listQRs  .bottom{
+                     margin-left: 0px;
+                        }
+
+                   .search{
+                       width:220px;
+                       margin-inline-start: 20%;
+                        }
+         }
+
+ @media only screen and (max-width: 382px) {
+                        
+                     .add_qr_button{
+                        width: 100%;
+                               }
+                      .search{
+                             width:220px;
+                             margin-inline-start: 20%;
+                            }
+
+                      .Main_grid2 .hide_button{
+                        padding: 12px 20px;
+          }
+ }
+ 

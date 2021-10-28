@@ -1,5 +1,5 @@
 import * as api from '../api/index';
-import { SAVE, GET , REMOVE, UPDATE} from '../constants/actionTypes';
+import { SAVE, GET, REMOVE, UPDATE } from '../constants/actionTypes';
 
 export const saveQR = (QR) => async (dispatch) => {
     try {
@@ -15,7 +15,7 @@ export const getQRs = () => async (dispatch) => {
         const { data } = await api.fetchQRs(); // const response = await... --> u res uvijek ima data objekt pa se odma destruktuira {data}
         dispatch({ type: GET, payload: data });//funkcija dispatcha akciju umjesto da je vrati, action je objekt koji ima type i payload pa ide dispatch({})
     } catch (err) {
-        console.log(err);
+        console.log(err.message);
     }
 }
 

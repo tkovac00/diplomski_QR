@@ -6,7 +6,7 @@ import * as api from '../api';
 export const getPosts = () => async (dispatch) => {
     try {
         const { data } = await api.fetchPosts(); // const response = await... --> u res uvijek ima data objekt pa se odma destruktuira {data}
-        dispatch({ type: FETCH_ALL, payload: data });//funkcija dispatcha akciju umjesto da je vrati, action je objekt koji ima type i payload pa ide dispatch({})
+        dispatch({ type: FETCH_ALL, payload: data });//redux-thunk -> funkcija dispatcha akciju umjesto da je vrati, action je objekt koji ima type i payload pa ide dispatch({})
     } catch (err) {
         console.log(err);
     }
@@ -14,7 +14,7 @@ export const getPosts = () => async (dispatch) => {
 
 export const createPost = (post) => async (dispatch) => {
     try {
-      const { data } = await api.createPost(post);
+        const { data } = await api.createPost(post);
         dispatch({ type: CREATE, payload: data });
     } catch (err) {
         console.log(err);

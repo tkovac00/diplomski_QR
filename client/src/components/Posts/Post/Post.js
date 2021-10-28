@@ -6,10 +6,11 @@ import './styles.css';
 import { useDispatch } from 'react-redux';
 import { deletePost } from '../../../actions/posts';
 import QRCode from 'qrcode';
-import { useHistory} from "react-router-dom";
+import CurrencyFormat from 'react-currency-format';
+import { useHistory } from "react-router-dom";
 
 
-const Post = ({ post, setCurrentId,setIsEditing, setIsForm }) => {
+const Post = ({ post, setCurrentId, setIsEditing, setIsForm }) => {
 
     const dispatch = useDispatch();
     const [image, setImage] = useState('');
@@ -28,23 +29,24 @@ const Post = ({ post, setCurrentId,setIsEditing, setIsForm }) => {
     return (
         <div className="card1">
 
+            <img className="post_photo" loading="lazy" src={image} alt="" />
+
             <div className="edit">
-                <h4 className="title1">{post.title}</h4>
                 <Button style={{ color: 'white' }} size="small" onClick={() => { history.push("/form"); setIsEditing(true); setCurrentId(post._id); setIsForm(false); }}><MoreHorizIcon fontSize="medium" /></Button>
             </div>
 
-            <img className="post_photo" loading="lazy" src={image} alt="" />
-
+            <div className="title_details">
+                {<h4 className="title1">{post.title}</h4>}
+            </div>
             <div className="details">
-                <h5>Bill for: {post.month_year}</h5>
-                <h5>Payer: {post.payer_name}</h5>
-                <h5>Amount: {post.amount} kn</h5>
+                <h5>{post.payer_name.toUpperCase()}</h5>
+                <h5 style={{ display: "inline-block", paddingLeft: "10px", paddingTop: "10px" }}><CurrencyFormat value={post.amount} displayType={'text'} thousandSeparator={true} /> kn</h5>
+                <h5>{post.month_year}</h5>
             </div>
 
             <div className="bottom">
-                <p>{post.date}</p>
                 <CardActions>
-                    <Button size="small" fontSize='10px' color="primary" onClick={() => dispatch(deletePost(post._id))}><DeleteIcon fontSize="small" /> Delete</Button>
+                    <h5>{post.date}</h5> <Button size="small" fontSize='10px' color="primary" onClick={() => dispatch(deletePost(post._id))}><DeleteIcon style={{ color: "#e5a00d" }} fontSize="medium" /></Button>
                 </CardActions>
             </div>
         </div>

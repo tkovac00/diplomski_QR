@@ -5,3 +5,6 @@ export const UPDATE = 'UPDATE';
 export const SAVE = 'SAVE';
 export const GET = 'GET';
 export const REMOVE = 'REMOVE';
+export const AUTH = 'AUTH';
+export const LOGOUT = 'LOGOUT';
+export const ERROR = 'ERROR';

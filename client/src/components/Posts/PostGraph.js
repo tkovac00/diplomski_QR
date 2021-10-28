@@ -1,7 +1,10 @@
 import React from 'react';
 import Graph from '../Graph/graph'
 
+/* eslint-disable */
 const PostGraph = (props) => {
+    const user = JSON.parse(localStorage.getItem('profile'));
+
     const graphData = [
         { label: 'Jan', value: 0 },
         { label: 'Feb', value: 0 },
@@ -18,11 +21,19 @@ const PostGraph = (props) => {
     ];
 
     for (const post of props.posts) {
-        const postMonth = post.month_year.slice(5, 7)-1;
+        if(user ?.result ?.googleId === post ?.creator || user ?.result ?._id === post ?.creator){
+        const postMonth = post.month_year.slice(5, 7) - 1;
         graphData[postMonth].value += + post.amount;
+        }
+        else{
+        const postMonth = post.month_year.slice(5, 7) - 1;
+        graphData[postMonth].value += + 0;
+        }
     }
-    return <Graph datas={graphData} />
-    
+
+
+
+    return <Graph datas={graphData} totalAmount={props.totalAmount} selected={props.selected} selectedMonth={props.selectedMonth} onChangeFilter={props.onChangeFilter} onChangeFilter2={props.onChangeFilter2} />
 };
 
 export default PostGraph;

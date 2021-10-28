@@ -4,18 +4,18 @@
 }
 
 .container2 {
+    position: relative;
     display: block;
     text-align: center;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding-bottom: 5px;
+    padding-top: 0px;
     width: 80%;
     margin-left: auto;
     margin-right: auto; 
-     background-color: rgba(44, 44, 44, 0.8);
     border-radius: 10px;
 }
 .form_pic{
-    background-image: url("c:\Users\Tina\Desktop\Diplomski\client\src\photos\novo.jpg");
+    /* background-image: url("c:\Users\Tina\Desktop\Diplomski\client\src\photos\novo.jpg"); */
     height: fit-content;
 }
 .form{
@@ -24,14 +24,12 @@
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    
 }
 
 .titles{
     color: white;
     margin-top:10px;
     margin-bottom: 10px;
-    text-shadow: 2px 1px #e5a00d;
 }
 input {
     width: 30%;
@@ -43,8 +41,14 @@ input {
     border-radius: 4px;
     box-sizing: border-box;
     background-color: rgba(44, 44, 44, 0.8);
+    color: white;
      
 }
+
+input:focus {
+    outline: none;
+    border: 2px solid #e5a00d;
+  }
 .submit{
     background-color:rgb(5, 110, 5);
     border-radius: 4px;
@@ -64,6 +68,7 @@ input {
     cursor: pointer;
     margin-left: 5px;
     border:none; 
+    position: relative;
    
 }
 
@@ -105,3 +110,52 @@ input {
     height: 25px;
   }
  
+  @media only screen and (max-width: 1220px) {
+    .container2{
+        width: 90%;
+    }
+    .container2 input{
+        width: 30%;
+    }
+  }
+
+  @media only screen and (max-width: 1050px) {
+    .container2{
+        width: 90%;
+    }
+    .container2 input{
+        width: 40%;
+    }
+  }
+  @media only screen and (max-width: 870px) {
+    .container2{
+        width: 100%;
+    }
+    .container2 input{
+        width: 55%;
+    }
+    .container2 h1{
+        font-size: 35px;
+     }
+  }
+
+  @media only screen and (max-width: 500px) {
+   
+    .container2 input{
+        width: 60%;
+    }
+    .container2 h1{
+        font-size: 30px;
+     }
+  }
+
+  @media only screen and (max-width: 400px) {
+    
+     .container2 input{
+         width: 80%;
+     }
+
+     .container2 h1{
+        font-size: 30px;
+     }
+   }

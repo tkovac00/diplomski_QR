@@ -1,2 +1,164 @@
-.layout{
+._profile {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    display: inline-flex;
+}
+._profile h6{
+    padding-top:4px;
+    margin-right: 20px ;
+    font-size: 20px;
+    margin-left: 8px;
+    color: white;
+}
+._header {
+    display: flex;
+    background:  rgba(44, 44, 44, 0.8);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    height: 60px;
+  }
+
+  .web_header {
+    padding-left: 0px;
+    display: inline-flex;
+    list-style-type: none;
+  }
+
+  .web_header li {
+    color: #e5a00d;
+    content: 0px;
+    padding-right: 10px;
+    padding-left: 15px;
+    margin: 0px;
+    display: inline-block;   
+    font-weight: bold;  
+    text-decoration: none;
+    font-size: 18px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    
+ }
+ 
+ .web_header li a{
+     text-decoration: none;
+     color: #e5a00d; 
+ }
+
+  .web_header li a.active {
+    /* text-decoration: underline white; */
+    padding-bottom:17px;
+    border-bottom: 1px solid white;
+    /* border-right: 2px solid  rgba(44, 44, 44, 0.8);
+    border-left: 2px solid  rgba(44, 44, 44, 0.8); */
+}
+  .mobile-option {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .logout {
+    background-color: rgba(44, 44, 44, 0.8);
+    color: #e5a00d;
+    font-weight: bold;
+    display: grid;
+    width:fit-content;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #e5a00d;
+    padding: 7px 15px;
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 978px) {
+    .web_header li{
+        font-size: 17px;
+        padding-left: 2px;
+    }
+
+    ._profile h6{
+        padding-top:7px;
+        margin-right: 10px ;
+        font-size: 16px;
+        margin-left: 8px;
+    }
+
+    .logout{
+        font-size: 15px;
+        padding: 7px 15px;
+    }
+}
+
+@media (max-width: 823px) {
+    ._profile div {
+        display: none;
+    }
+
+    ._profile h6 {
+        display: none;
+    }
+}
+  @media (max-width: 700px) {
+    /*Mobile View */
+    ._header {
+      padding: 0px 10px;
+    }
+    .web_header {
+      display: flex;
+      width: 100%;
+      height: fit-content;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      opacity: 0;
+      transition: all;
+      flex-direction: column;
+      list-style-type: none;
+      grid-gap: 0px;
+    }
+    .web_header.active {
+      background: #3f3f3f;
+       opacity: 1;
+      transition: all; 
+      z-index: 1;
+      align-content: center;
+      padding-left: 0px;
+    }
+    .web_header li{
+        text-align: center;
+        height: 30px;
+        border-bottom: 1px solid white;
+    }
+    .web_header li a{
+        height: 100%;
+       width: 100%;
+    }
+    .web_header li a.active{
+        border-bottom: none;
+    }
+  
+    .menu-icon {
+      width: 45px;
+      height: 45px;
+    }
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 10vw;
+      padding: 30px 0px;
+    }
+
+    
+    
+  .mobile-menu {
+    display: block;
+    position: absolute;
+  }
+
+ 
 }
